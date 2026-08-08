@@ -1,5 +1,5 @@
 /**
- * Lightweight toast/alert notification store for Genomi Atlas AI.
+ * Lightweight toast/alert notification store for Genome Atlas AI.
  * Uses a simple pub-sub pattern with localStorage for persistence.
  */
 

@@ -54,7 +54,7 @@ export function InstructionGuide({ open, onClose }: InstructionGuideProps) {
               <HelpCircle className="w-4 h-4 text-violet" />
             </div>
             <div>
-              <h3 className="text-sm font-heading font-bold text-foreground">How Genomi Atlas Works</h3>
+              <h3 className="text-sm font-heading font-bold text-foreground">How Genome Atlas Works</h3>
               <p className="text-[10px] text-foreground-muted">Your guide to evolutionary exploration</p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export function InstructionGuide({ open, onClose }: InstructionGuideProps) {
         <div className="px-5 py-3 border-t border-border flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             <Dna className="w-3 h-3 text-pink" />
-            <span className="text-[9px] text-foreground-muted">Genomi Atlas AI v1.0</span>
+            <span className="text-[9px] text-foreground-muted">Genome Atlas AI v1.0</span>
           </div>
           <button
             onClick={onClose}

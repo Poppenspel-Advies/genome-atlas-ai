@@ -355,7 +355,7 @@ export default function App() {
 
   // ── Clear history ──
   const clearHistory = useCallback(() => {
-    localStorage.removeItem('genomi_atlas_analyses');
+    localStorage.removeItem('genome_atlas_analyses');
   }, []);
 
   // ── Generate weekly report ──
@@ -366,7 +366,7 @@ export default function App() {
       return;
     }
     const reportText = reports.map((r) =>
-      `=== Genomi Atlas AI Weekly Report ===\n` +
+      `=== Genome Atlas AI Weekly Report ===\n` +
       `Week: ${r.weekStart} to ${r.weekEnd}\n` +
       `Species: ${r.species.join(', ')}\n` +
       `Analyses: ${r.analysesCount}\n` +
@@ -378,7 +378,7 @@ export default function App() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `genomi-weekly-report-${new Date().toISOString().split('T')[0]}.txt`;
+    a.download = `genome-weekly-report-${new Date().toISOString().split('T')[0]}.txt`;
     a.click();
     URL.revokeObjectURL(url);
     setReportDue(false);
@@ -420,7 +420,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-between">
             <div className="flex items-center gap-2 text-[11px] text-foreground/80">
               <Dna className="w-3.5 h-3.5 text-violet" />
-              <span className="font-medium">Genomi Atlas AI</span>
+              <span className="font-medium">Genome Atlas AI</span>
               <span className="text-foreground-muted/60 hidden sm:inline">—</span>
               <span className="text-foreground-muted hidden sm:inline">Evolutionary Time Machine &middot; {LEVELS[userLevel].icon} {LEVELS[userLevel].label}</span>
             </div>
@@ -474,7 +474,7 @@ export default function App() {
                   {user ? user.email?.split('@')[0] ?? 'User' : 'Alex Reynolds'}
                 </p>
                 <p className="text-[9px] text-foreground-muted truncate">
-                  {user ? user.email : 'alex@genomi.ai'}
+                  {user ? user.email : 'alex@genome.ai'}
                 </p>
               </div>
             )}
@@ -891,7 +891,7 @@ export default function App() {
               <div className="relative z-10">
                 <div className="flex items-center gap-2 mb-2">
                   <Zap className="w-3.5 h-3.5 text-gold" />
-                  <p className="text-[11px] font-bold text-foreground">{userLevel === 'scientist' ? 'Genomi Atlas Scientist' : 'Genomi Atlas Pro'}</p>
+                  <p className="text-[11px] font-bold text-foreground">{userLevel === 'scientist' ? 'Genome Atlas Scientist' : 'Genome Atlas Pro'}</p>
                 </div>
                 <p className="text-[9px] text-foreground-muted leading-relaxed mb-2.5">
                   {userLevel === 'beginner' ? 'Unlock unlimited analyses, HD illustrations, and narrated timelines.' :
@@ -960,7 +960,7 @@ export default function App() {
 
           {!sidebarCollapsed && (
             <div className="px-4 py-2 border-t border-border/50">
-              <p className="text-[8px] text-foreground-muted/30 tracking-wider">v2.0 &middot; Genomi Atlas AI</p>
+              <p className="text-[8px] text-foreground-muted/30 tracking-wider">v2.0 &middot; Genome Atlas AI</p>
             </div>
           )}
         </div>
@@ -978,7 +978,7 @@ export default function App() {
             </button>
             <div className="flex items-center gap-2">
               <Dna className="w-4 h-4 text-pink" />
-              <span className="font-heading text-xs font-bold tracking-wide">Genomi Atlas AI</span>
+              <span className="font-heading text-xs font-bold tracking-wide">Genome Atlas AI</span>
             </div>
           </div>
 
@@ -1098,7 +1098,7 @@ export default function App() {
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-violet-dim border border-violet/20 mb-3">
                   <Dna className="w-5 h-5 text-violet" />
                 </div>
-                <h3 className="text-sm font-heading font-bold text-foreground mb-1">Sign in to Genomi Atlas</h3>
+                <h3 className="text-sm font-heading font-bold text-foreground mb-1">Sign in to Genome Atlas</h3>
                 <p className="text-[11px] text-foreground-muted">Enter your email to receive a magic link</p>
               </div>
               {authSent ? (
@@ -1149,7 +1149,7 @@ export default function App() {
         <button
           onClick={() => setShowGuide(true)}
           className="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-gradient-to-r from-violet to-pink text-white shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-[0.95]"
-          title="How to use Genomi Atlas"
+          title="How to use Genome Atlas"
         >
           <HelpCircle className="w-5 h-5" />
         </button>
@@ -1206,7 +1206,7 @@ export default function App() {
                       </h2>
                       <p className="text-sm text-foreground-muted max-w-md mx-auto leading-relaxed">
                         Upload any biological specimen &mdash; a photo, video, or voice note &mdash; and
-                        explore two alternate evolutionary futures.
+                        explore three alternate evolutionary futures.
                       </p>
                     </div>
                     <UploadArea
@@ -1234,7 +1234,7 @@ export default function App() {
                             Genome Atlas is Creating
                           </h2>
                           <p className="text-xs text-foreground-muted max-w-sm mx-auto leading-relaxed">
-                            Tracing evolutionary pathways through deep time to generate two
+                            Tracing evolutionary pathways through deep time to generate three
                             alternate futures...
                           </p>
                         </div>
@@ -1509,7 +1509,7 @@ export default function App() {
             </div>
             <div className="mt-3 pt-3 border-t border-border/50 flex items-center justify-between">
               <p className="text-[10px] text-foreground-muted">
-                Genomi Atlas AI &mdash; Evolution Time Machine · {LEVELS[userLevel].icon} {LEVELS[userLevel].label}
+                Genome Atlas AI &mdash; Evolution Time Machine · {LEVELS[userLevel].icon} {LEVELS[userLevel].label}
               </p>
               <p className="text-[10px] text-foreground-muted/60">v2.0</p>
             </div>

@@ -114,6 +114,7 @@ export function TimeMachineView({ userLevel }: TimeMachineViewProps) {
                         <span className={`px-1.5 py-0.5 rounded text-[7px] border ${
                           r.topPath === 'quantum' ? 'bg-violet-dim border-violet/20 text-violet' :
                           r.topPath === 'natural-selection' ? 'bg-gold-dim border-gold/20 text-gold' :
+                          r.topPath === 'deep-time' ? 'bg-teal-dim border-teal/20 text-teal' :
                           'bg-surface-elevated border-border text-foreground-muted'
                         }`}>{r.topPath}</span>
                       </div>
@@ -134,7 +135,7 @@ export function TimeMachineView({ userLevel }: TimeMachineViewProps) {
             <h4 className="text-xs font-semibold text-foreground mb-1">🔮 Next Week's Projection</h4>
             <p className="text-[10px] text-foreground-muted leading-relaxed">
               {reports.length > 0
-                ? `Based on your analysis of ${reports[0].species.join(', ')}, we predict continued interest in ${reports[0].topPath === 'quantum' ? 'quantum-influenced' : 'natural selection'} pathways. Try analyzing a contrasting species to broaden your evolutionary dataset.`
+                ? `Based on your analysis of ${reports[0].species.join(', ')}, we predict continued interest in ${reports[0].topPath === 'quantum' ? 'quantum-influenced' : reports[0].topPath === 'deep-time' ? 'deep time' : 'natural selection'} pathways. Try analyzing a contrasting species to broaden your evolutionary dataset.`
                 : 'Start analyzing specimens this week and the Time Machine will project your evolutionary interests for next week.'}
             </p>
           </div>

@@ -28,6 +28,9 @@
   --color-quantum-glow: rgba(139, 92, 246, 0.4);
   --color-natural: #FFD700;
   --color-natural-glow: rgba(255, 215, 0, 0.4);
+  --color-teal: #14B8A6;
+  --color-teal-glow: rgba(20, 184, 166, 0.4);
+  --color-teal-dim: rgba(20, 184, 166, 0.12);
 
   /* UI */
   --color-border: rgba(255, 255, 255, 0.06);

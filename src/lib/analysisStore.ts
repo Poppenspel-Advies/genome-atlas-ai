@@ -11,7 +11,7 @@ export interface AnalysisRecord {
   speciesName: string;
   confidence: number;
   mode: string;
-  selectedPath: 'quantum' | 'natural-selection' | null;
+  selectedPath: 'quantum' | 'natural-selection' | 'deep-time' | null;
   result: AnalysisResult;
   reportGenerated?: string; // ISO date of last report
 }
@@ -22,7 +22,7 @@ export interface WeeklyReport {
   weekEnd: string;
   analysesCount: number;
   species: string[];
-  topPath: 'quantum' | 'natural-selection' | 'even';
+  topPath: 'quantum' | 'natural-selection' | 'deep-time' | 'even';
   summary: string;
   predictions: string[];
 }
@@ -33,7 +33,7 @@ export interface AnalysisMapData {
   weeklyTrend: { week: string; count: number }[];
 }
 
-const STORAGE_KEY = 'genomi_atlas_analyses';
+const STORAGE_KEY = 'genome_atlas_analyses';
 
 function loadAll(): AnalysisRecord[] {
   try {
@@ -148,7 +148,7 @@ function getWeekStart(date: Date): string {
 
 function generateSummary(records: AnalysisRecord[], topPath: string): string {
   const species = [...new Set(records.map((r) => r.speciesName))];
-  const pathLabel = topPath === 'quantum' ? 'Quantum evolution' : topPath === 'natural-selection' ? 'Natural selection' : 'a balanced mix';
+  const pathLabel = topPath === 'quantum' ? 'Quantum evolution' : topPath === 'natural-selection' ? 'Natural selection' : topPath === 'deep-time' ? 'Deep time analysis' : 'a balanced mix';
   return `This week you analyzed ${records.length} specimen(s): ${species.join(', ')}. Your dominant evolutionary path was ${pathLabel}.`;
 }
 
@@ -159,6 +159,9 @@ function generatePredictions(records: AnalysisRecord[], species: string[]): stri
   }
   if (records.some((r) => r.selectedPath === 'quantum')) {
     preds.push('Your quantum pathway selections suggest an interest in radiation-driven mutation — try analyzing extremophiles next.');
+  }
+  if (records.some((r) => r.selectedPath === 'deep-time')) {
+    preds.push('Deep time pathways intrigue you — examine fossil records for paleoclimate correlation patterns.');
   }
   if (records.some((r) => r.selectedPath === 'natural-selection')) {
     preds.push('Natural selection seems to fascinate you — consider comparing island vs. mainland species for adaptive radiation insights.');

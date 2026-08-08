@@ -37,7 +37,7 @@ export function SettingsView({ userLevel, onLevelChange, clearHistory }: Setting
 
   function useAnalysisCount(): number {
     try {
-      const raw = localStorage.getItem('genomi_atlas_analyses');
+      const raw = localStorage.getItem('genome_atlas_analyses');
       return raw ? JSON.parse(raw).length : 0;
     } catch { return 0; }
   }

@@ -3,7 +3,7 @@ import { Dna, Atom, Leaf, RotateCcw, Sparkles, Zap, Volume2, VolumeX } from 'luc
 
 interface NarrationPlayerProps {
   title: string;
-  type: 'quantum' | 'natural-selection';
+  type: 'quantum' | 'natural-selection' | 'deep-time';
   description: string;
   scientificDetail: string;
   imageUrl?: string;
@@ -21,8 +21,9 @@ export function NarrationPlayer({
   onReset,
 }: NarrationPlayerProps) {
   const isQuantum = type === 'quantum';
-  const accentColor = isQuantum ? '#8B5CF6' : '#FFD700';
-  const accentLabel = isQuantum ? 'Quantum' : 'Natural Selection';
+  const isDeepTime = type === 'deep-time';
+  const accentColor = isQuantum ? '#8B5CF6' : isDeepTime ? '#14B8A6' : '#FFD700';
+  const accentLabel = isQuantum ? 'Quantum' : isDeepTime ? 'Deep Time' : 'Natural Selection';
 
   // TTS state
   const [ttsPlaying, setTtsPlaying] = useState(false);
@@ -32,7 +33,7 @@ export function NarrationPlayer({
     `The ${speciesName}.`,
     description,
     scientificDetail,
-    `This evolutionary path was projected by Genomi Atlas AI.`,
+    `This evolutionary path was projected by Genome Atlas AI.`,
   ].join(' ');
 
   // "Animal voice" intro — a guttural creature call to set the tone
@@ -171,7 +172,7 @@ export function NarrationPlayer({
               <div className="absolute inset-0 rounded-full bg-violet-glow blur-md animate-pulse-glow" />
             </div>
             <p className="text-xs font-heading font-bold text-foreground tracking-wide">
-              Genomi Atlas
+              Genome Atlas
             </p>
             <p className="text-[10px] text-foreground-muted/60 mt-1">Time Machine Cube</p>
           </div>

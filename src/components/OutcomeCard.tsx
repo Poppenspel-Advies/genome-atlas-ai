@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { ImageIcon, Loader2, Sparkles, Atom, Leaf, Check, Trophy, RefreshCw } from 'lucide-react';
+import { ImageIcon, Loader2, Sparkles, Atom, Leaf, Check, Trophy, RefreshCw, Clock } from 'lucide-react';
 import { getSpecimenImageUrl, getPollinationsUrl } from '../lib/imageGeneration';
 
 interface OutcomeCardProps {
   title: string;
-  type: 'quantum' | 'natural-selection';
+  type: 'quantum' | 'natural-selection' | 'deep-time';
   description: string;
   scientificDetail: string;
   imageUrl?: string;
@@ -110,9 +110,12 @@ export function OutcomeCard({
   }, []);
 
   const isQuantum = type === 'quantum';
-  const accentColor = isQuantum ? '#8B5CF6' : '#FFD700';
+  const isDeepTime = type === 'deep-time';
+  const accentColor = isQuantum ? '#8B5CF6' : isDeepTime ? '#14B8A6' : '#FFD700';
   const borderGlowClass = isQuantum
     ? 'shadow-[0_0_30px_rgba(139,92,246,0.15)]'
+    : isDeepTime
+    ? 'shadow-[0_0_30px_rgba(20,184,166,0.15)]'
     : 'shadow-[0_0_30px_rgba(255,215,0,0.15)]';
 
   return (
@@ -137,7 +140,8 @@ export function OutcomeCard({
           : ''
         }
         ${selected && isQuantum ? 'ring-violet' : ''}
-        ${selected && !isQuantum ? 'ring-gold' : ''}
+        ${selected && !isQuantum && !isDeepTime ? 'ring-gold' : ''}
+        ${selected && isDeepTime ? 'ring-teal' : ''}
       `}
         style={{
           border: `1px solid ${selected ? accentColor : 'rgba(255,255,255,0.08)'}`,
@@ -166,8 +170,8 @@ export function OutcomeCard({
               color: accentColor,
             }}
           >
-            {isQuantum ? <Atom className="w-3 h-3" /> : <Leaf className="w-3 h-3" />}
-            {isQuantum ? 'Quantum Evolution' : 'Natural Selection'}
+            {isQuantum ? <Atom className="w-3 h-3" /> : isDeepTime ? <Clock className="w-3 h-3" /> : <Leaf className="w-3 h-3" />}
+            {isQuantum ? 'Quantum Evolution' : isDeepTime ? 'Deep Time Analysis' : 'Natural Selection'}
           </div>
 
           {/* Title */}

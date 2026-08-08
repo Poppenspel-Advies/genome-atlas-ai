@@ -30,7 +30,7 @@ export function HistoryView({ userLevel }: HistoryViewProps) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `genomi-report-${new Date().toISOString().split('T')[0]}.txt`;
+    a.download = `genome-report-${new Date().toISOString().split('T')[0]}.txt`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -83,6 +83,7 @@ export function HistoryView({ userLevel }: HistoryViewProps) {
                   <span className={`px-1.5 py-0.5 rounded text-[8px] border ${
                     r.topPath === 'quantum' ? 'bg-violet-dim border-violet/20 text-violet' :
                     r.topPath === 'natural-selection' ? 'bg-gold-dim border-gold/20 text-gold' :
+                    r.topPath === 'deep-time' ? 'bg-teal-dim border-teal/20 text-teal' :
                     'bg-surface-elevated border-border text-foreground-muted'
                   }`}>{r.topPath}</span>
                 </div>
@@ -122,6 +123,7 @@ export function HistoryView({ userLevel }: HistoryViewProps) {
                   <span className={`text-[10px] px-2 py-0.5 rounded-full ${
                     rec.selectedPath === 'quantum' ? 'bg-violet-dim text-violet border border-violet/20' :
                     rec.selectedPath === 'natural-selection' ? 'bg-gold-dim text-gold border border-gold/20' :
+                    rec.selectedPath === 'deep-time' ? 'bg-teal-dim text-teal border border-teal/20' :
                     'bg-surface-elevated text-foreground-muted border border-border'
                   }`}>{rec.selectedPath?.replace('-', ' ') ?? 'Pending'}</span>
                   <button onClick={() => handleDelete(rec.id)} className="p-1 rounded text-foreground-muted/30 hover:text-destructive opacity-0 group-hover:opacity-100 transition-all">

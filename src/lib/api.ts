@@ -8,7 +8,7 @@ export interface AnalysisInput {
 
 export interface EvolutionaryOutcome {
   title: string;
-  type: 'quantum' | 'natural-selection';
+  type: 'quantum' | 'natural-selection' | 'deep-time';
   description: string;
   scientificDetail: string;
   imagePrompt: string;

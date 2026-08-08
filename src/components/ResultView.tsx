@@ -1,5 +1,6 @@
 import { RotateCcw, Sparkles, Dna } from 'lucide-react';
 import { OutcomeCard } from './OutcomeCard';
+import { DeepTimeCard } from './DeepTimeCard';
 import type { AnalysisResult } from '../lib/api';
 
 interface ResultViewProps {
@@ -54,14 +55,14 @@ export function ResultView({ result, selectedIndex, onSelect, onReset }: ResultV
           </span>
         </div>
         <p className="text-[11px] text-foreground-muted mt-2 max-w-md mx-auto leading-relaxed">
-          Genome Atlas AI has generated two possible evolutionary futures for this
+          Genome Atlas AI has generated three possible evolutionary futures for this
           specimen. Select the path you want to explore in the Time Machine.
         </p>
       </div>
 
-      {/* Two pyramid cards side by side */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
-        {outcomes.slice(0, 2).map((outcome, i) => (
+      {/* Three pyramid cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+        {outcomes.slice(0, 3).map((outcome, i) => (
           <OutcomeCard
             key={outcome.type}
             title={outcome.title}
@@ -78,6 +79,13 @@ export function ResultView({ result, selectedIndex, onSelect, onReset }: ResultV
           />
         ))}
       </div>
+
+      {/* Deep Time Pyramid — shown when deep-time outcome is selected */}
+      {selectedIndex !== null && outcomes[selectedIndex]?.type === 'deep-time' && (
+        <div className="mb-8">
+          <DeepTimeCard speciesName={outcomes[selectedIndex]?.title || speciesName} />
+        </div>
+      )}
 
       {/* Footer action */}
       <div className="flex justify-center">

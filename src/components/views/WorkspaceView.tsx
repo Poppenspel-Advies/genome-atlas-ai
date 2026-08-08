@@ -51,7 +51,7 @@ export function WorkspaceView({ onStartAnalysis }: WorkspaceViewProps) {
           </div>
           <div className="flex-1">
             <h3 className="text-sm font-heading font-bold text-foreground mb-1">Ready to explore?</h3>
-            <p className="text-[11px] text-foreground-muted mb-3">Upload a biological specimen and the AI will generate two alternate evolutionary futures showing quantum and natural selection pathways.</p>
+            <p className="text-[11px] text-foreground-muted mb-3">Upload a biological specimen and the AI will generate three alternate evolutionary futures showing quantum, natural selection, and deep time pathways.</p>
             <button onClick={onStartAnalysis} className="px-4 py-2 rounded-lg bg-gradient-to-r from-violet to-pink text-white text-xs font-semibold hover:opacity-90 transition-all active:scale-[0.97] flex items-center gap-1.5">
               Start New Analysis <ArrowRight className="w-3 h-3" />
             </button>
@@ -80,7 +80,7 @@ export function WorkspaceView({ onStartAnalysis }: WorkspaceViewProps) {
                     <p className="text-[9px] text-foreground-muted">{new Date(rec.timestamp).toLocaleDateString()} · {Math.round(rec.confidence * 100)}% confidence</p>
                   </div>
                 </div>
-                <span className={`text-[10px] px-2 py-0.5 rounded-full ${rec.selectedPath === 'quantum' ? 'bg-violet-dim text-violet border border-violet/20' : rec.selectedPath === 'natural-selection' ? 'bg-gold-dim text-gold border border-gold/20' : 'bg-surface-elevated text-foreground-muted border border-border'}`}>
+                <span className={`text-[10px] px-2 py-0.5 rounded-full ${rec.selectedPath === 'quantum' ? 'bg-violet-dim text-violet border border-violet/20' : rec.selectedPath === 'natural-selection' ? 'bg-gold-dim text-gold border border-gold/20' : rec.selectedPath === 'deep-time' ? 'bg-teal-dim text-teal border border-teal/20' : 'bg-surface-elevated text-foreground-muted border border-border'}`}>
                   {rec.selectedPath?.replace('-', ' ') ?? 'Pending'}
                 </span>
               </div>

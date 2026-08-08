@@ -20,7 +20,7 @@ interface ProfileViewProps {
 export function ProfileView({ user, userLevel, onLevelChange, onSignOut }: ProfileViewProps) {
   const [analysesCount, setAnalysesCount] = useState(0);
   const [displayName, setDisplayName] = useState(() => {
-    return localStorage.getItem('genomi_display_name') ?? user?.user_metadata?.full_name ?? user?.email?.split('@')[0] ?? 'Explorer';
+    return localStorage.getItem('genome_display_name') ?? user?.user_metadata?.full_name ?? user?.email?.split('@')[0] ?? 'Explorer';
   });
   const [editingName, setEditingName] = useState(false);
   const [nameInput, setNameInput] = useState(displayName);
@@ -46,7 +46,7 @@ export function ProfileView({ user, userLevel, onLevelChange, onSignOut }: Profi
     const trimmed = nameInput.trim();
     if (!trimmed) return;
     setDisplayName(trimmed);
-    localStorage.setItem('genomi_display_name', trimmed);
+    localStorage.setItem('genome_display_name', trimmed);
     setEditingName(false);
     toast.success('Profile updated', 'Display name saved successfully');
   };
@@ -72,7 +72,7 @@ export function ProfileView({ user, userLevel, onLevelChange, onSignOut }: Profi
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `genomi-profile-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `genome-profile-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
     toast.success('Data exported', 'Your profile data has been downloaded as JSON');
@@ -133,7 +133,7 @@ export function ProfileView({ user, userLevel, onLevelChange, onSignOut }: Profi
             )}
             <div className="flex items-center gap-2 text-xs text-foreground-muted">
               <Mail className="w-3 h-3" />
-              <span>{user?.email ?? 'guest@genomi.ai'}</span>
+              <span>{user?.email ?? 'guest@genome.ai'}</span>
               <span className="text-foreground-muted/30">·</span>
               <Calendar className="w-3 h-3" />
               <span>{joinedDate}</span>

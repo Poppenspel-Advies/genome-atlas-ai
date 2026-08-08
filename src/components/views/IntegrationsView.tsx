@@ -17,7 +17,7 @@ export function IntegrationsView() {
           <Link2 className="w-7 h-7 text-violet" />
         </div>
         <h2 className="text-xl font-heading font-bold text-foreground tracking-wide mb-1">Integrations</h2>
-        <p className="text-xs text-foreground-muted max-w-lg mx-auto">Connected services powering the Genomi Atlas AI platform.</p>
+        <p className="text-xs text-foreground-muted max-w-lg mx-auto">Connected services powering the Genome Atlas AI platform.</p>
       </div>
       <div className="space-y-2 mb-6">
         {services.map((svc, i) => (
