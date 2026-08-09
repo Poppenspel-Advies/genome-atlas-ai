@@ -1,5 +1,5 @@
-import { useState, useCallback, useEffect } from 'react';
-import { Dna, Atom, Leaf, RotateCcw, Sparkles, Zap, Volume2, VolumeX } from 'lucide-react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import { Dna, Atom, Leaf, RotateCcw, Sparkles, Zap, Volume2, VolumeX, Loader2 } from 'lucide-react';
 
 interface NarrationPlayerProps {
   title: string;
@@ -27,6 +27,27 @@ export function NarrationPlayer({
 
   // TTS state
   const [ttsPlaying, setTtsPlaying] = useState(false);
+
+  // Cube image preloading — eagerly preload the image when this component mounts
+  const [cubeImageLoaded, setCubeImageLoaded] = useState(false);
+  const cubePreloadedRef = useRef(false);
+
+  useEffect(() => {
+    if (imageUrl && !cubePreloadedRef.current) {
+      cubePreloadedRef.current = true;
+      const img = new Image();
+      img.onload = () => setCubeImageLoaded(true);
+      img.onerror = () => {
+        // Auto-retry cube image once
+        const retryImg = new Image();
+        retryImg.onload = () => setCubeImageLoaded(true);
+        retryImg.src = imageUrl;
+      };
+      img.src = imageUrl;
+    } else if (!imageUrl) {
+      setCubeImageLoaded(true); // nothing to load
+    }
+  }, [imageUrl]);
 
   // Full narration text combining description + scientific detail
   const narrationText = [
@@ -146,12 +167,17 @@ export function NarrationPlayer({
 
           {/* Left face — Image */}
           <div className="cube-face left p-0">
-            {imageUrl ? (
+            {imageUrl && cubeImageLoaded ? (
               <img
                 src={imageUrl}
                 alt={title}
                 className="w-full h-full object-cover"
               />
+            ) : imageUrl ? (
+              <div className="flex flex-col items-center justify-center gap-2 w-full h-full">
+                <Loader2 className="w-6 h-6 text-foreground-muted animate-spin" />
+                <p className="text-[9px] text-foreground-muted/40">Loading illustration...</p>
+              </div>
             ) : (
               <div className="flex flex-col items-center gap-2">
                 <Dna className="w-8 h-8 text-foreground-muted/30" />

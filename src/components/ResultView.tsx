@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { RotateCcw, Sparkles, Dna } from 'lucide-react';
 import { OutcomeCard } from './OutcomeCard';
 import { DeepTimeCard } from './DeepTimeCard';
+import { getSpecimenImageUrl } from '../lib/imageGeneration';
 import type { AnalysisResult } from '../lib/api';
 
 interface ResultViewProps {
@@ -12,6 +14,18 @@ interface ResultViewProps {
 
 export function ResultView({ result, selectedIndex, onSelect, onReset }: ResultViewProps) {
   const { speciesName, confidence, outcomes, error } = result;
+
+  // Generate stable image URLs once per result — each OutcomeCard handles its own loading/retry
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
+
+  useEffect(() => {
+    const urls = outcomes.slice(0, 3).map((o) => {
+      if (o.imageUrl) return o.imageUrl;
+      if (o.imagePrompt) return getSpecimenImageUrl(o.imagePrompt).url;
+      return '';
+    });
+    setImageUrls(urls);
+  }, [result]);
 
   if (error) {
     return (
@@ -56,28 +70,31 @@ export function ResultView({ result, selectedIndex, onSelect, onReset }: ResultV
         </div>
         <p className="text-[11px] text-foreground-muted mt-2 max-w-md mx-auto leading-relaxed">
           Genome Atlas AI has generated three possible evolutionary futures for this
-          specimen. Select the path you want to explore in the Time Machine.
+          specimen. Select a path once its illustration has loaded.
         </p>
       </div>
 
-      {/* Three pyramid cards */}
+      {/* Three pyramid cards — each manages its own image loading */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-        {outcomes.slice(0, 3).map((outcome, i) => (
-          <OutcomeCard
-            key={outcome.type}
-            title={outcome.title}
-            type={outcome.type}
-            description={outcome.description}
-            scientificDetail={outcome.scientificDetail}
-            imageUrl={outcome.imageUrl}
-            imagePrompt={outcome.imagePrompt}
-            narrationUrl={outcome.narrationUrl}
-            index={i}
-            selectable={selectedIndex === null}
-            selected={selectedIndex === i}
-            onSelect={() => onSelect(i)}
-          />
-        ))}
+        {outcomes.slice(0, 3).map((outcome, i) => {
+          const url = imageUrls[i] || outcome.imageUrl || '';
+          return (
+            <OutcomeCard
+              key={outcome.type}
+              title={outcome.title}
+              type={outcome.type}
+              description={outcome.description}
+              scientificDetail={outcome.scientificDetail}
+              imageUrl={url}
+              imagePrompt={outcome.imagePrompt}
+              narrationUrl={outcome.narrationUrl}
+              index={i}
+              selectable={selectedIndex === null}
+              selected={selectedIndex === i}
+              onSelect={() => onSelect(i)}
+            />
+          );
+        })}
       </div>
 
       {/* Deep Time Pyramid — shown when deep-time outcome is selected */}

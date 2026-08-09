@@ -5,13 +5,23 @@
 export const POLLINATIONS_BASE = 'https://image.pollinations.ai/prompt';
 
 /**
- * Generate a free image URL from a text prompt using Pollinations.ai.
- * The image is generated on-the-fly when the URL is loaded in an <img> tag.
- *
- * @param prompt - Detailed description of the image to generate
- * @param width - Image width (default 512)
- * @param height - Image height (default 512)
- * @returns A URL string that loads the generated image
+ * Simple string hash to create a deterministic seed from a prompt.
+ * Same prompt always → same seed → same URL → Pollinations cache hit.
+ */
+function hashString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+/**
+ * Generate a deterministic image URL from a text prompt using Pollinations.ai.
+ * Uses a hash of the prompt as the seed so the same prompt always produces the
+ * same URL — this lets Pollinations cache and serve the image faster on retries.
  */
 export function getPollinationsUrl(
   prompt: string,
@@ -19,24 +29,39 @@ export function getPollinationsUrl(
   height = 512,
 ): string {
   const encoded = encodeURIComponent(prompt.trim().slice(0, 400));
-  return `${POLLINATIONS_BASE}/${encoded}?width=${width}&height=${height}&seed=${Math.floor(Math.random() * 10000)}&nologo=true`;
+  const seed = hashString(prompt.trim().slice(0, 200));
+  return `${POLLINATIONS_BASE}/${encoded}?width=${width}&height=${height}&seed=${seed}&nologo=true`;
 }
 
 /**
- * Generate a free image for an evolved species based on its imagePrompt.
- * Returns an object with the URL and a unique key for React.
+ * Build a standard scientific-style prompt for a specimen image.
+ */
+export function buildSpecimenPrompt(imagePrompt: string): string {
+  return `Scientific illustration: ${imagePrompt}. Detailed, realistic, high quality, biology textbook style, evolutionary biology diagram.`;
+}
+
+/**
+ * Generate fallback prompts to try if the primary prompt fails to load.
+ */
+export function getFallbackPrompt(title: string, type: string, index: number): string {
+  const fallbacks = [
+    `${title} ${type === 'quantum' ? 'bioluminescent glowing' : type === 'deep-time' ? 'prehistoric geological' : 'evolved'} creature, wildlife illustration, scientific, detailed`,
+    `Close-up of a ${title}, nature photography style, animal portrait, high detail`,
+    `${title}, natural history museum diorama style, dramatic lighting`,
+  ];
+  return fallbacks[index % fallbacks.length];
+}
+
+/**
+ * Generate a stable image URL for an evolved species based on its imagePrompt.
+ * Returns an object with the URL and a deterministic key.
  */
 export function getSpecimenImageUrl(imagePrompt: string): {
   url: string;
   key: string;
 } {
-  const key = `specimen-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  return {
-    url: getPollinationsUrl(
-      `Scientific illustration: ${imagePrompt}. Detailed, realistic, high quality, biology textbook style, evolutionary biology diagram.`,
-      768,
-      512,
-    ),
-    key,
-  };
+  const prompt = buildSpecimenPrompt(imagePrompt);
+  const url = getPollinationsUrl(prompt, 768, 512);
+  const seed = hashString(imagePrompt.trim().slice(0, 200));
+  return { url, key: `specimen-${seed}` };
 }
