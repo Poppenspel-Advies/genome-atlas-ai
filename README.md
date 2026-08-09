@@ -12,6 +12,16 @@
 
 --------
 
+
+### An Evolutionary Intelligence Platform combining multimodal AI, Evolution Knowledge Intelligence, Natural Selection, Quantum Evolution, Deep Time Analysis,3D Genome Time Machine visualization, AI-generated species, and immersive AI-powered species-specific deep/resonant vocalization of Species Name.
+
+
+> 🧬 **From biological evidence to evolutionary possibilities — 
+> GenomeAtlas AI transforms scientific intelligence into an interactive 
+> journey through the past, present, and future of life.**
+>
+
+
 ## 🛠️ Technology Stack
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -37,7 +47,6 @@
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 
-### 🌍 Bringing Images to Life with AI Vision & Smart Narration
 
 [🚀 Live Demo](https://youtu.be/8SZnVuPWDtU)
 |
@@ -47,8 +56,10 @@
 |
 [⭐ Star Repository](https://github.com/Poppenspel-Advies/genome-atlas-ai)
 
+
 </div>
 
+----------------------------------------------------------------------------------
 
 
 **Genomi Atlas AI** is an AI-powered evolutionary biology platform that lets you upload any biological specimen (photo, video, voice note, or text description) and explore **two alternate evolutionary futures** — Quantum (radiation-induced mutation) and Natural Selection (classical evolutionary pressures).
