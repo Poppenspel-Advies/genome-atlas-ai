@@ -1,27 +1,109 @@
+
+<div align="center">
+  
 # 🧬 Genomi Atlas AI — Evolutionary Time Machine
+
+### **Mapping Evolution Through Intelligence**
+
+### Reconstructing Evolution Through Scientific Multimodal AI
+
+
+<img src="https://github.com/Poppenspel-Advies/genome-atlas-ai/blob/main/public/GENOME_ATLAS_AI_COVER_IMAGE.png" alt="GenomeAtlas AI - Evolutionary Time Machine" width="100%">
+
+--------
+
+## 🛠️ Technology Stack
+
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+
+![Gemini](https://img.shields.io/badge/Google_Gemini-Multimodal_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging_Face-Open_Source_AI-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+![Bright Data](https://img.shields.io/badge/Bright_Data-Data_Intelligence-00AEEF?style=for-the-badge&logoColor=white)
+![Speechmatics](https://img.shields.io/badge/Speechmatics-Speech_AI-6C2BD9?style=for-the-badge&logoColor=white)
+
+![Pollinations AI](https://img.shields.io/badge/Pollinations_AI-Image_Generation-FF69B4?style=for-the-badge&logoColor=white)
+![ElevenLabs](https://img.shields.io/badge/ElevenLabs-AI_Voice-000000?style=for-the-badge&logoColor=white)
+![Kokoro-82M](https://img.shields.io/badge/Kokoro--82M-Text--to--Speech-FF6F61?style=for-the-badge&logoColor=white)
+
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+
+![3D Visualization](https://img.shields.io/badge/3D-Genome_Time_Machine_Cube-8A2BE2?style=for-the-badge&logoColor=white)
+![AI Evolution](https://img.shields.io/badge/AI-Evolution_Intelligence-DAA520?style=for-the-badge&logoColor=white)
+
+![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
+
+### 🌍 Bringing Images to Life with AI Vision & Smart Narration
+
+[🚀 Live Demo](#)
+|
+[📖 Wiki](https://github.com/Poppenspel-Advies/genome-atlas-ai/wiki)
+|
+[🎥 Genome Atlas AI Product URL ](https://genome-atlas-ai.nativelyai.app/)
+|
+[⭐ Star Repository](https://github.com/Poppenspel-Advies/genome-atlas-ai)
+
+</div>
+
+
 
 **Genomi Atlas AI** is an AI-powered evolutionary biology platform that lets you upload any biological specimen (photo, video, voice note, or text description) and explore **two alternate evolutionary futures** — Quantum (radiation-induced mutation) and Natural Selection (classical evolutionary pressures).
 
-Built with React, TypeScript, TailwindCSS v4, Supabase, Gemini AI, and free-tier image generation models.
+
+## 🌌 Evolutionary Time Machine™
+
+**GenomeAtlas AI™** is a next-generation **Scientific Multimodal Intelligence Platform** that transforms biological images, PDFs, text, voice, and other scientific evidence into interactive evolutionary scenarios.
+
+Instead of simply identifying a species, GenomeAtlas AI explores:
+
+> **How did it evolve? What pressures shaped it? What could happen next?**
+
+The platform combines **Multimodal AI, Evolutionary Biology, Scientific Intelligence, Generative AI, Voice AI, Knowledge Graphs, and 3D visualization** to create an interactive **Evolution Time Machine™** experience.
 
 ---
 
 ## ✨ Features
 
 | Feature | Description |
-|---------|-------------|
-| 🧬 **Specimen Analysis** | Upload photos, videos, voice notes, or text descriptions of biological specimens |
-| 🔬 **Dual Evolution Paths** | Each analysis generates Quantum + Natural Selection futures |
-| 🎨 **AI-Generated Images** | Pollinations.ai + Hugging Face free models render evolved species visuals |
-| 🎧 **Voice Narration** | ElevenLabs-powered narration for each evolutionary outcome |
-| 📊 **Weekly Reports** | Auto-generated summaries of your analysis history |
-| 🕰️ **Time Machine** | Weekly trend charts, analysis maps, and future projections |
-| 👤 **User Profiles** | Supabase auth with magic link, profile page with stats |
-| 🎓 **3 User Levels** | Beginner (free), Researcher ($12/mo), Scientist ($29/mo) |
-| 💬 **AI Chat** | Level-aware conversational assistant |
-| 📋 **Analysis History** | Full history with delete, export, and weekly reports |
-| 🦕 **Dino Archive** | 12 prehistoric species with detailed profile cards |
-| 🔗 **Integrations Hub** | Supabase, Gemini, Hugging Face, Pollinations, Speechmatics, ElevenLabs, Bright Data |
+| --- | --- |
+| 🧬 **Specimen Analysis** | Upload images, videos, PDFs, voice notes, or text descriptions of biological specimens for multimodal AI analysis |
+| 🔬 **Three Evolution Paths** | Generate three alternative evolutionary scenarios: **Natural Selection, Quantum Evolution, and Deep Time Analysis** |
+| 🌿 **Natural Selection** | Explore adaptation through environmental pressure, competition, climate, food availability, survival, and reproduction |
+| ⚛️ **Quantum Evolution** | Explore alternative mutation and evolutionary pathways using quantum-inspired probabilistic modeling |
+| 🕰️ **Deep Time Analysis** | Explore evolutionary change across geological timescales and reconstruct long-term evolutionary pathways |
+| 🧠 **Evolution Knowledge Engine** | Connect specimen characteristics, environmental factors, scientific references, evolutionary traits, and AI reasoning into an integrated evolution model |
+| 🧊 **3D Genome Time Machine Cube™** | Transform the selected evolutionary scenario into an interactive 3D cube containing species, traits, environment, mutation, timeline, and evolutionary information |
+| 🎨 **AI-Generated Species** | Generate realistic visual representations of evolved species using AI image-generation models |
+| 🐾 **Species Identity** | Identify and display the analyzed species, evolutionary lineage, characteristics, and confidence information |
+| 🎙️ **species-specific deep/resonant vocalization** | Generate species-specific narration including the **species name, evolutionary story, adaptations, environmental changes, and future scenario** |
+| 🔊 **AI Voice Experience** | Listen to evolutionary explanations through AI-generated scientific narration and voice responses |
+| 💬 **Genome Time Machine Agent** | Interactive AI assistant that answers questions about species, evolution, mutations, environments, and generated scenarios |
+| 🔄 **Evolution Comparison** | Compare Natural Selection, Quantum Evolution, and Deep Time outcomes side-by-side |
+| 📊 **Evolution Analytics** | Visualize evolutionary traits, adaptation factors, confidence levels, environmental pressure, and scenario changes |
+| 🧬 **Genome Explorer** | Explore evolutionary traits, genetic characteristics, mutations, adaptations, and lineage information |
+| 🗺️ **Evolution Map** | Visualize species distribution, environmental influences, and evolutionary relationships |
+| 📈 **Evolution Timeline** | Explore species development across historical, present, and projected evolutionary periods |
+| 🦕 **Dino Archive** | Explore prehistoric species with detailed evolutionary profiles, characteristics, timelines, and AI-generated visualizations |
+| 🦴 **Fossil Library** | Explore fossil records and connect paleontological evidence with evolutionary scenarios |
+| 🔬 **Species Comparison** | Compare two or more species based on traits, environment, evolutionary history, and adaptations |
+| 🧪 **Evolution Simulator** | Experiment with environmental and evolutionary variables to explore alternative evolutionary scenarios |
+| 🧬 **Mutation Map** | Visualize possible trait and mutation pathways across evolutionary generations |
+| 📋 **Analysis History** | Save, review, delete, and export previous evolutionary analyses and generated scenarios |
+| 📊 **Weekly Reports** | Automatically generate summaries of evolutionary analyses, discoveries, trends, and explored species |
+| 🕰️ **Evolution Time Machine** | Explore historical evolution, present characteristics, and AI-generated future evolutionary possibilities |
+| 👤 **User Profiles** | User authentication, profile information, analysis statistics, activity, and preferences |
+| 🎓 **Three User Levels** | **Beginner**, **Researcher**, and **Scientist** experiences with progressively advanced capabilities |
+| 💎 **Pro Features** | Advanced 3D visualization, extended analysis, video input, advanced narration, research documents, and deeper evolutionary modeling |
+| 📄 **Scientific PDF Analysis** | Upload scientific papers, research documents, and reference material for contextual evolutionary analysis |
+| 🎥 **Video Analysis** | Analyze biological and environmental video observations *(Pro)* |
+| 🎙️ **Voice Input** | Ask evolutionary questions naturally using voice and convert speech into AI analysis |
+| 🌐 **Scientific Reference Intelligence** | Retrieve relevant external reference information using Bright Data to enrich evolutionary analysis |
+| 🔗 **Integrations Hub** | Manage and explore integrations including **Gemini, Bright Data, Speechmatics, Hugging Face, Pollinations.ai, Supabase, ElevenLabs, and other AI services** |
+| ⚙️ **Settings & Preferences** | Manage account settings, AI preferences, narration options, privacy, notifications, and application configuration |
 
 ---
 
@@ -75,23 +157,12 @@ External APIs:
   · Bright Data (web scraping reference data)
 ```
 
----
 
-## 🛠️ Tech Stack
+ ## Architecture Diagram 
+ 
 
-| Layer | Technology |
-|-------|------------|
-| **Framework** | React 18 + TypeScript |
-| **Build** | Vite 5 |
-| **Styling** | TailwindCSS v4 + CSS theme tokens |
-| **Icons** | Lucide React |
-| **Auth & Backend** | Supabase (Auth, Edge Functions, Storage) |
-| **AI Analysis** | Google Gemini 2.0 (via Supabase Edge Function) |
-| **Image Generation** | Pollinations.ai + Hugging Face free inference |
-| **Voice** | ElevenLabs TTS, Speechmatics STT |
-| **State** | React useState + useCallback + localStorage |
-| **Routing** | SPA with sidebar-driven view switching |
-| **Deployment** | Vite build → static hosting |
+<img src="https://github.com/Poppenspel-Advies/genome-atlas-ai/blob/main/public/GenomeAtlasAI_ArchitectureAdiagram.png" width="70%">
+
 
 ---
 
@@ -222,6 +293,14 @@ toast.success('Done!', 'Analysis complete');
 
 ---
 
+## Complete Product Loop
+
+
+<img src="https://github.com/Poppenspel-Advies/genome-atlas-ai/blob/main/public/GenomeAtlasAI_CompleteProductLoop.png" width="80%">
+
+
+-------
+
 ## 🎨 UI Screenshots / Screens
 
 | Screen | Description |
@@ -252,6 +331,30 @@ toast.success('Done!', 'Analysis complete');
 - **Bright Data** — Web scraping reference data
 
 ---
+
+## The Comparative Analysis of Multimodal AI Platforms 
+
+<img src="https://github.com/Poppenspel-Advies/genome-atlas-ai/blob/main/public/Competitive_Analysis_GenomeAtlasAI.png" width="80%">
+
+----------------
+
+
+# 🖼️ Application Showcase
+
+
+#  🧬  Genome Atals AI — Product Demonstration
+
+## Watch the Demo
+
+<p align="center">
+
+[![Genome Atlas AI Demo](#)
+
+### ▶️ https://www.youtube.com/watch?v=_9gH0ES8FBw
+
+</p>
+
+--------------------------------------------------------
 
 ## 📝 License
 
