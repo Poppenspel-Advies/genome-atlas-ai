@@ -39,7 +39,7 @@
 
 ### 🌍 Bringing Images to Life with AI Vision & Smart Narration
 
-[🚀 Live Demo](#)
+[🚀 Live Demo](https://youtu.be/8SZnVuPWDtU)
 |
 [📖 Wiki](https://github.com/Poppenspel-Advies/genome-atlas-ai/wiki)
 |
@@ -342,15 +342,15 @@ toast.success('Done!', 'Analysis complete');
 # 🖼️ Application Showcase
 
 
-#  🧬  Genome Atals AI — Product Demonstration
+#  🧬  Genome Atlas AI — Product Demonstration
 
 ## Watch the Demo
 
 <p align="center">
 
-[![Genome Atlas AI Demo](#)
+[Genome Atlas AI Demo]( https://youtu.be/8SZnVuPWDtU)
 
-### ▶️ https://www.youtube.com/watch?v=_9gH0ES8FBw
+### ▶️  https://youtu.be/8SZnVuPWDtU
 
 </p>
 
